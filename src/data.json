@@ -1,0 +1,247 @@
+{
+  "students": [
+    {
+      "_id": "5e22edd2e0a9ed39ba3caacd",
+      "avatars": [
+        {
+          "_id": "5e32b480d33914542769112b",
+          "mimetype": "image/jpeg",
+          "destination": "uploads/images",
+          "filename": "image-1580381306429.jpeg",
+          "author": "5e22edd2e0a9ed39ba3caacd",
+          "createdAt": "2020-01-30T10:48:32.958Z",
+          "updatedAt": "2020-07-28T08:27:14.080Z",
+          "image_id": 12273,
+          "__v": 0
+        }
+      ],
+      "last_name": "Горох",
+      "first_name": "Алина",
+      "points": 4526,
+      "homeworks": 47,
+      "rating": 93.44,
+      "grade": "excellent",
+      "position": 1
+    },
+    {
+      "_id": "5e512fb65821191964254cec",
+      "avatars": [
+        {
+          "_id": "5e66a9712ef6d054e177fd3b",
+          "mimetype": "image/jpeg",
+          "destination": "uploads/images",
+          "filename": "image-1583786353135.jpeg",
+          "author": "5e512fb65821191964254cec",
+          "createdAt": "2020-03-09T20:39:13.757Z",
+          "updatedAt": "2020-07-28T08:27:20.890Z",
+          "image_id": 14004,
+          "__v": 0
+        }
+      ],
+      "last_name": "Титаренко",
+      "first_name": "Вадим",
+      "points": 4521,
+      "homeworks": 48,
+      "rating": 93.3,
+      "grade": "excellent",
+      "position": 2
+    },
+    {
+      "_id": "5ea00e3ba86493197240d76a",
+      "avatars": [
+        {
+          "_id": "5ed4dd07a1d14e72563eff57",
+          "mimetype": "image/jpeg",
+          "destination": "uploads/images",
+          "filename": "image-1591008518665.jpg",
+          "author": "5ea00e3ba86493197240d76a",
+          "createdAt": "2020-06-01T10:48:39.042Z",
+          "updatedAt": "2020-07-28T08:27:28.343Z",
+          "image_id": 16630,
+          "__v": 0
+        }
+      ],
+      "last_name": "Благодарная",
+      "first_name": "Оксана",
+      "points": 4519,
+      "homeworks": 48,
+      "rating": 93.27,
+      "grade": "excellent",
+      "position": 3
+    },
+    {
+      "_id": "5e3d7de6bd5ef72e1dad4b2b",
+      "avatars": [
+        {
+          "_id": "5e66a8ea2ef6d054e177fd35",
+          "mimetype": "image/jpeg",
+          "destination": "uploads/images",
+          "filename": "image-1583786215782.jpeg",
+          "author": "5e3d7de6bd5ef72e1dad4b2b",
+          "createdAt": "2020-03-09T20:36:58.280Z",
+          "updatedAt": "2020-07-28T08:27:20.888Z",
+          "image_id": 14003,
+          "__v": 0
+        }
+      ],
+      "last_name": "Панфилов",
+      "first_name": "Антон",
+      "points": 4514,
+      "homeworks": 48,
+      "rating": 93.14,
+      "grade": "excellent",
+      "position": 4
+    },
+    {
+      "_id": "5e2f1020121e82083817c6f6",
+      "avatars": [],
+      "last_name": "Ступицкий",
+      "first_name": "Максим",
+      "points": 4514,
+      "homeworks": 47,
+      "rating": 93.11,
+      "grade": "excellent",
+      "position": 4
+    },
+    {
+      "_id": "5e1eff6635a543447d9cb3cd",
+      "avatars": [
+        {
+          "_id": "5ed8bc371872ea747356926a",
+          "mimetype": "image/jpeg",
+          "destination": "uploads/images",
+          "filename": "image-1591262262617.jpg",
+          "author": "5e1eff6635a543447d9cb3cd",
+          "createdAt": "2020-06-04T09:17:43.051Z",
+          "updatedAt": "2020-07-28T08:27:28.471Z",
+          "image_id": 16681,
+          "__v": 0
+        }
+      ],
+      "first_name": "Владимир",
+      "last_name": "Сичинава",
+      "points": 4434,
+      "homeworks": 47,
+      "rating": 91.15,
+      "grade": "excellent",
+      "position": 5
+    },
+    {
+      "_id": "5e39a970a847bd4a7b809aa3",
+      "avatars": [
+        {
+          "_id": "5ed55e0f852e3d727cb014cf",
+          "mimetype": "image/jpeg",
+          "destination": "uploads/images",
+          "filename": "image-1591041551209.jpg",
+          "author": "5e39a970a847bd4a7b809aa3",
+          "createdAt": "2020-06-01T19:59:11.720Z",
+          "updatedAt": "2020-07-28T08:27:28.385Z",
+          "image_id": 16647,
+          "__v": 0
+        }
+      ],
+      "last_name": "Лысяк",
+      "first_name": "Алексей",
+      "points": 4428,
+      "homeworks": 47,
+      "rating": 91.01,
+      "grade": "excellent",
+      "position": 6
+    },
+    {
+      "_id": "5e595983bb17dd2bbccc6a2f",
+      "avatars": [
+        {
+          "_id": "5e6e2300c890ce5b10a16211",
+          "mimetype": "image/jpeg",
+          "destination": "uploads/images",
+          "filename": "image-1584276224265.jpeg",
+          "author": "5e595983bb17dd2bbccc6a2f",
+          "createdAt": "2020-03-15T12:43:44.757Z",
+          "updatedAt": "2020-07-28T08:27:20.755Z",
+          "image_id": 14209,
+          "__v": 0
+        }
+      ],
+      "last_name": "Лабза",
+      "first_name": "Руслан",
+      "points": 4039,
+      "homeworks": 42,
+      "rating": 81.41,
+      "grade": "very good",
+      "position": 7
+    },
+    {
+      "_id": "5dde512f6d7bf958040d1b61",
+      "avatars": [
+        {
+          "_id": "5df93ad8d88a6850a5eeb1d0",
+          "mimetype": "image/jpeg",
+          "destination": "uploads/images",
+          "filename": "image-1576614615632.jpeg",
+          "author": "5dde512f6d7bf958040d1b61",
+          "createdAt": "2019-12-17T20:30:16.253Z",
+          "updatedAt": "2020-07-28T08:27:16.826Z",
+          "image_id": 11139,
+          "__v": 0
+        }
+      ],
+      "first_name": "Виктория",
+      "last_name": "Березюк",
+      "points": 3939,
+      "homeworks": 41,
+      "rating": 78.95,
+      "grade": "very good",
+      "position": 8
+    },
+    {
+      "_id": "5e3af5436c76487c1e77aaf1",
+      "avatars": [
+        {
+          "_id": "5e66b29d2ef6d054e177fe71",
+          "mimetype": "image/jpeg",
+          "destination": "uploads/images",
+          "filename": "image-1583788700852.jpeg",
+          "author": "5e3af5436c76487c1e77aaf1",
+          "createdAt": "2020-03-09T21:18:21.359Z",
+          "updatedAt": "2020-07-28T08:27:20.918Z",
+          "image_id": 14012,
+          "__v": 0
+        }
+      ],
+      "last_name": "Троян",
+      "first_name": "Алла",
+      "points": 1835,
+      "homeworks": 20,
+      "rating": 32.96,
+      "grade": "satisfy",
+      "position": 9
+    },
+    {
+      "_id": "5e35a9f583b1c229c40f3c80",
+      "avatars": [
+        {
+          "_id": "5e69f0c51048e943fb45bc15",
+          "mimetype": "image/jpeg",
+          "destination": "uploads/images",
+          "filename": "image-1584001217806.jpeg",
+          "author": "5e35a9f583b1c229c40f3c80",
+          "createdAt": "2020-03-12T08:20:21.720Z",
+          "updatedAt": "2020-07-28T08:27:20.048Z",
+          "image_id": 14118,
+          "__v": 0
+        }
+      ],
+      "last_name": "Шарыпин",
+      "first_name": "Антон",
+      "points": 1600,
+      "homeworks": 16,
+      "rating": 28.4,
+      "grade": "satisfy",
+      "position": 10
+    }
+  ],
+  "hide_certificates": false,
+  "hide_rating": false
+}
