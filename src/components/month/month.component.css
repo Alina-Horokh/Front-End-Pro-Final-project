@@ -1,0 +1,32 @@
+.month {
+  width: 30%;
+  height: 210px;
+  margin-bottom: 20px;
+  background-color: rgba(240, 255, 255, 0.678);
+  border-radius: 5px;
+}
+
+.month-header {
+  padding: 5px 0;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+
+.month-content {
+  display: flex;
+	flex-wrap: wrap;
+}
+.day, .day-week {
+  width: 14%;
+}
+
+.day-week {
+  font-weight: 700;
+}
+
+.day-week:nth-child(6),
+.day-week:nth-child(7){
+  color: rgba(255, 0, 0, 0.836);
+}

@@ -1,40 +1,8 @@
+body {
+  font: 14px/24px 'Arial', sans-serif;
+  background-color: cadetblue;
+}
 .App {
   text-align: center;
-}
-
-.App-header, #students {
-  background-color: #004282;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(20px + 2vmin);
-  color: white;
-}
-
-p {
-  margin-bottom: 50px;
-}
-.btn-header {
-  padding: 15px 20px;
-  background: #4ED401;
-  border: none;
-  border-radius: 3px;
-  text-decoration: none;
-  font-size: 20px;
-  color: white;  
-}
-
-.btn-header:hover {
-  background: #45b703;
-}
-
-#students {
-  background-color: #282c34;
-  font-size: calc(10px + 2vmin);
-}
-
-#students td {
-  padding: 5px 10px;
+  width: 100%;
 }
