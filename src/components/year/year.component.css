@@ -1,3 +1,7 @@
+.year {
+	width: 100%;
+	text-align: center;
+}
 .year-header {
 	margin-bottom: 20px;
 	display: flex;
@@ -7,7 +11,7 @@
 
 }
 
-.year-header > button {
+button {
 	width: 100px;
 	height: 50px;
 	font: 25px/24px 'Arial', sans-serif;

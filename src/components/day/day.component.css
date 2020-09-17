@@ -1,0 +1,35 @@
+.month-page .date, 
+.month-page .day-week {
+  font-size: 40px;
+  padding: 15px 0;
+}
+
+.date, .day-week {
+  width: calc(100% / 7);
+  padding: 2px 0;
+  text-align: center;
+  justify-content: space-between;
+}
+  
+.day-week {
+  font-weight: 700;
+}
+  
+.day-week:nth-child(6),
+.day-week:nth-child(7){
+  color: rgba(255, 0, 0, 0.836);
+}
+
+.date.today {
+  width: calc(13% - 4px);
+  padding: 0;
+  border: 2px solid cadetblue;
+  border-radius: 2px;
+}
+
+.month-page .date.today {
+  width: calc(13% - 12px);
+  padding: 11px 0;
+  border: 6px solid cadetblue;
+  border-radius: 10px;
+}

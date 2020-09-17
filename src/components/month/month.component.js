@@ -1,40 +1,48 @@
 import React, { Component } from 'react';
-import { Day } from '../../components';
+import { Link } from 'react-router-dom';
+import { Day } from '..';
 import './month.component.css';
 
 export default class MonthComponent extends Component {
   
   render() {
+    /**
+     * @type {Date}
+     */
     const startDate = this.props.startDate;
-    const nextDate = new Date(startDate.getFullYear(), startDate.getMonth() + 1);
-    const title = startDate.toLocaleString('default', { month: 'long' });
-    const d = (startDate.getDay() + 6) % 7;
-    
-    const diff = (nextDate - startDate) / (1000 * 3600 * 24);
-    const daysWeek = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+    const tempDate = new Date(startDate);
 
+    const title = startDate.toLocaleString('default', { month: 'long' });
+
+    const nextDate = new Date(startDate.getFullYear(), startDate.getMonth() + 1);    
+    const diff = (nextDate - startDate) / (1000 * 3600 * 24);
+
+    const d = (startDate.getDay() + 6) % 7;
+
+    const daysWeek = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+    
     const days = [];
     let day = 0;
-    for (let i = 0; i < diff; i++) {
+
+    for (let i = 0; i < diff; i++) { 
       day = day + 1;
-      days.push(day);
-    }
-    
-    for (let i = d; i > 0; i--) {
-      days.unshift('');
+      tempDate.setDate(day);
+      days.push(new Date(tempDate));      
     }
 
     return (
-    <div className='month' key='index'>
-      <div className='month-header'>
-        {title} 
+      <div className='month' key='index'>
+        <div className='month-header'>
+          <Link to={`/year/${startDate.getFullYear()}/month/${startDate.getMonth() + 1}`}>
+            {title} 
+          </Link>
+        </div>
+        <div className='month-content'>
+          {daysWeek.map((day, index) => <div className='day-week' key={'title' + index}>{day}</div>)}
+          <div className='spacer' style={{ width: `calc(100% / 7 * ${d})`}}/>
+          {days.map((date, index) => <Day key={index} value={date}/>)}
+        </div>
       </div>
-      <div className='month-content'>
-        {daysWeek.map((day, index) => <div className='day-week' key={index}>{day}</div>)}
-        {days.map((day, index) => <Day value={day}/>)}
-      </div>
-    </div>
     );
   }
-
 }

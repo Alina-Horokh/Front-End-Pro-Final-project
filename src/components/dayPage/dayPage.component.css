@@ -1,0 +1,7 @@
+.day-page-header {
+    text-align: center;
+    text-transform: capitalize;
+    display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
