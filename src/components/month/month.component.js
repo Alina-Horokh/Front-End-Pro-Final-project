@@ -15,7 +15,7 @@ export default class MonthComponent extends Component {
     const title = startDate.toLocaleString('default', { month: 'long' });
 
     const nextDate = new Date(startDate.getFullYear(), startDate.getMonth() + 1);    
-    const diff = (nextDate - startDate) / (1000 * 3600 * 24);
+    const diff = Math.round((nextDate - startDate) / (1000 * 3600 * 24));
 
     const d = (startDate.getDay() + 6) % 7;
 
@@ -40,7 +40,7 @@ export default class MonthComponent extends Component {
         <div className='month-content'>
           {daysWeek.map((day, index) => <div className='day-week' key={'title' + index}>{day}</div>)}
           <div className='spacer' style={{ width: `calc(100% / 7 * ${d})`}}/>
-          {days.map((date, index) => <Day key={index} value={date}/>)}
+          {days.map((date, index) => <Day key={index} value={date} todos={this.props.todos}/>)}
         </div>
       </div>
     );

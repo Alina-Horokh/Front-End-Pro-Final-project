@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { YearPage, Navbar, Month, DayPage } from './components';
+import { todoService } from './services/todo.service';
 
 import {
   BrowserRouter as Router,
@@ -10,8 +11,15 @@ import {
 } from "react-router-dom";
 
 
-export default class App extends Component { 
+
+export default class App extends Component {
+  
+  state = {
+    todos: todoService.load(),
+  }
+  
   render () {
+    console.log(this.state.todos);
     return (
       <Router>
         <Navbar />
@@ -34,7 +42,7 @@ export default class App extends Component {
           }}/>  
 
           <Route path='/year/:year' exact render={({ match }) => {
-            return (<YearPage year={match.params.year}/>)
+            return (<YearPage year={match.params.year} todos={this.state.todos}/>)
           }}/>
 
           <Route path='/year/:year/month/:month' exact render={({ match }) => {

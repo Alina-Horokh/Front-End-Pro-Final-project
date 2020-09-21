@@ -23,7 +23,7 @@ export default class YearComponent extends Component {
         <div className='year-content'>
           {months.map(startDate => {
             return (
-            <Month key={startDate.toISOString()} startDate={startDate}/>
+            <Month key={startDate.toISOString()} startDate={startDate} todos={this.props.todos}/>
             );
           })} 
         </div>
