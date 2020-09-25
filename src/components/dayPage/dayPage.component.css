@@ -1,7 +1,26 @@
+.day-page {
+  font-size: 20px;
+}
 .day-page-header {
-    text-align: center;
-    text-transform: capitalize;
-    display: flex;
+  text-align: center;
+  text-transform: capitalize;
+  display: flex;
 	justify-content: space-around;
 	align-items: center;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+input {
+  width: 90%;
+  margin-bottom: 5px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+input[type=submit] {
+  background-color: rgba(240, 255, 255, 0.678);
 }

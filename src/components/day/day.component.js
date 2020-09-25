@@ -5,14 +5,17 @@ import { Link } from 'react-router-dom';
 
 export default class DayComponent extends Component {
   render () {
+    const { year, month, day } = this.props;
 
-    const date = this.props.value;
-    const isToday = date && (new Date().toDateString() === date.toDateString());
+    const today = new Date(year, month - 1, day);
+
+  
+    const isToday = new Date().toDateString() === today.toDateString();
 
     return (   
-      <div className={classnames({ date: true, today: isToday })}>
-        <Link to={`/year/${Number(date.getFullYear())}/month/${Number(date.getMonth())}/day/${Number(date.getDate())}`}>
-          {date ? date.getDate() : null}
+      <div className={classnames({ day: true, today: isToday })}>
+        <Link to={`/year/${Number(year)}/month/${Number(month)}/day/${Number(day)}`}>
+          {day ? day : null}
         </Link>
       </div>
     );

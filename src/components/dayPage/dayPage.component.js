@@ -26,27 +26,24 @@ export default class DayPageComponent extends Component {
 
   render() {
 
-    const startDate= this.props.startDate;
-    const day = startDate.getDate();
-    const month = startDate.getMonth();
-    const title = startDate.toLocaleString('default', { month: 'long' });
-    const year = startDate.getFullYear();
+    const { year, month, day } = this.props;
+    const today = new Date(year, month - 1, day);
+    const title = today.toLocaleString('ru', { month: 'long', day: 'numeric', weekday: 'long' });
     
     return (
       <div className='day-page'>
         <div className='day-page-header'>
 
-        <Link to={`/year/${Number(year)}/month/${Number(month) + 1}/day/${Number(day) - 1}`}>
+        <Link to={`/year/${Number(year)}/month/${Number(month)}/day/${Number(day) - 1}`}>
           <button type='button'>&lt;</button>
         </Link>
-
-        <h2>{title} {day} {year}</h2>
-
-        <Link to={`/year/${Number(year)}/month/${Number(month) + 1}/day/${Number(day) + 1}`}>
+        <h2> {title} {year}</h2>
+        <Link to={`/year/${Number(year)}/month/${Number(month)}/day/${Number(day) + 1}`}>
           <button type='button'>&gt;</button>
         </Link>
 
         </div>
+
         <div className='day-page-content'>
           <form onSubmit={this.handleSubmit}>
 

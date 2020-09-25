@@ -7,7 +7,7 @@ import './year.component.css';
 
 export default class YearComponent extends Component {
   render () {
-    const months = Array(12).fill(null).map((x, index) => new Date(this.props.year, index, 1));
+    const months = Array(12).fill(null).map((x, index) => index = index + 1);
 
     return (
       <div className="year">
@@ -21,9 +21,14 @@ export default class YearComponent extends Component {
           </Link>
         </div>
         <div className='year-content'>
-          {months.map(startDate => {
+          {months.map(month => {
             return (
-            <Month key={startDate.toISOString()} startDate={startDate} todos={this.props.todos}/>
+            <Month 
+              key={month} 
+              year={this.props.year}
+              month={month}
+              todos={this.props.todos}
+            />
             );
           })} 
         </div>

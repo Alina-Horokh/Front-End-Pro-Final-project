@@ -1,3 +1,4 @@
+import { get } from 'lodash';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Day } from '..';
@@ -6,11 +7,12 @@ import './month.component.css';
 export default class MonthComponent extends Component {
   
   render() {
+    const { year, month } = this.props;
+  
     /**
      * @type {Date}
      */
-    const startDate = this.props.startDate;
-    const tempDate = new Date(startDate);
+    const startDate = new Date(year, month - 1);
 
     const title = startDate.toLocaleString('default', { month: 'long' });
 
@@ -26,21 +28,26 @@ export default class MonthComponent extends Component {
 
     for (let i = 0; i < diff; i++) { 
       day = day + 1;
-      tempDate.setDate(day);
-      days.push(new Date(tempDate));      
+      days.push(day);      
     }
 
     return (
       <div className='month' key='index'>
         <div className='month-header'>
-          <Link to={`/year/${startDate.getFullYear()}/month/${startDate.getMonth() + 1}`}>
+          <Link to={`/year/${year}/month/${month}`}>
             {title} 
           </Link>
         </div>
         <div className='month-content'>
           {daysWeek.map((day, index) => <div className='day-week' key={'title' + index}>{day}</div>)}
           <div className='spacer' style={{ width: `calc(100% / 7 * ${d})`}}/>
-          {days.map((date, index) => <Day key={index} value={date} todos={this.props.todos}/>)}
+          {days.map((day, index) => <Day 
+            key={index} 
+            day={day} 
+            year={this.props.year} 
+            month={this.props.month} 
+            todos={get(this.props.todos, day, [])}
+          />)}
         </div>
       </div>
     );

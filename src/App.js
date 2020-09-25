@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { YearPage, Navbar, Month, DayPage } from './components';
 import { todoService } from './services/todo.service';
+import { get } from 'lodash';
 
 import {
   BrowserRouter as Router,
@@ -19,12 +20,16 @@ export default class App extends Component {
   }
   
   render () {
-    console.log(this.state.todos);
+    const { todos } = this.state;
     return (
       <Router>
         <Navbar />
 
         <Switch>
+        <Route path='/' exact render={() => {
+            const today = new Date();
+            return (<Redirect to={`/year/${today.getFullYear()}`}/>);
+          }}/>
 
           <Route path='/year/current' exact render={() => {
             const today = new Date();
@@ -42,7 +47,7 @@ export default class App extends Component {
           }}/>  
 
           <Route path='/year/:year' exact render={({ match }) => {
-            return (<YearPage year={match.params.year} todos={this.state.todos}/>)
+            return (<YearPage year={match.params.year} todos={get(todos, [match.params.year], {})}/>)
           }}/>
 
           <Route path='/year/:year/month/:month' exact render={({ match }) => {
@@ -51,7 +56,11 @@ export default class App extends Component {
                 <Link to={`/year/${Number(match.params.year)}/month/${Number(match.params.month) - 1}`}>
                   <button type='button'>&lt;</button>
                 </Link>
-                <Month startDate={new Date(Number(match.params.year), Number(match.params.month) - 1)}/>
+                <Month 
+                  year={Number(match.params.year)} 
+                  month={Number(match.params.month)}
+                  todos={get(todos, [match.params.year, match.params.month], {})}
+                />
                 <Link to={`/year/${Number(match.params.year)}/month/${Number(match.params.month) + 1}`}>
                   <button type='button'>&gt;</button>
                 </Link>
@@ -61,7 +70,12 @@ export default class App extends Component {
 
           <Route path='/year/:year/month/:month/day/:day' exact render={({ match }) => {
             return (
-              <DayPage startDate={new Date(Number(match.params.year), Number(match.params.month) - 1, Number(match.params.day))}/>
+              <DayPage 
+                year={Number(match.params.year)} 
+                month={Number(match.params.month)}
+                day={Number(match.params.day)}
+                todos={get(todos, [match.params.year, match.params.month, match.params.day], {})}
+              />
             );
           }}/>
 
