@@ -18,7 +18,21 @@ export default class App extends Component {
   state = {
     todos: todoService.load(),
   }
+
+  componentDidMount() {
+    todoService.addEventListener('update', this.handleTodoUpdate);
+  }
+
+  componentWillUnmount() {
+    todoService.removeEventListener('update', this.handleTodoUpdate);
+  }
   
+  handleTodoUpdate = (event) => {
+    this.setState({
+      todos: event.currentTarget.todos,
+    });
+  }
+
   render () {
     const { todos } = this.state;
     return (
@@ -74,7 +88,7 @@ export default class App extends Component {
                 year={Number(match.params.year)} 
                 month={Number(match.params.month)}
                 day={Number(match.params.day)}
-                todos={get(todos, [match.params.year, match.params.month, match.params.day], {})}
+                todos={get(todos, [match.params.year, match.params.month, match.params.day], [])}
               />
             );
           }}/>

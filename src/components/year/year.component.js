@@ -1,9 +1,9 @@
+import { get } from 'lodash';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Month } from '../../components';
 import './year.component.css';
 
-// const currentYear = new Date().getFullYear();
 
 export default class YearComponent extends Component {
   render () {
@@ -27,7 +27,7 @@ export default class YearComponent extends Component {
               key={month} 
               year={this.props.year}
               month={month}
-              todos={this.props.todos}
+              todos={get(this.props.todos, month, {})}
             />
             );
           })} 

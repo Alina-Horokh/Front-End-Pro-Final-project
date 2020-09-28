@@ -1,6 +1,7 @@
 body {
   font: 14px/24px 'Arial', sans-serif;
   background-color:  rgb(184, 187, 187);
+  padding: 0 20px;
 }
 
 a {
