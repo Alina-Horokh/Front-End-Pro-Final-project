@@ -4,6 +4,7 @@ import Day from './day/day.component';
 import Navbar from './navbar/navbar.component';
 import DayPage from './dayPage/dayPage.component';
 import TodoPage from './todoPage/todoPage.component';
+import Form from './form/form.component';
 
 export {
   YearPage,
@@ -11,5 +12,6 @@ export {
   Day,
   Navbar,
   DayPage,
-  TodoPage
+  TodoPage,
+  Form
 }

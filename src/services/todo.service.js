@@ -38,6 +38,7 @@ class TodoService extends EventTarget {
     this._unsubscribe();
     localStorage.setItem(TODO_LOCAL_STORAGE_KEY, JSON.stringify(this.todos));
     this._subscribe();
+    this.dispatchUpdate();
   }
 
   save() {
@@ -66,7 +67,6 @@ class TodoService extends EventTarget {
       }
     }
     this.save();
-    this.dispatchUpdate();
   }
 
   removeById({ year, month, day }, todo) {
@@ -85,7 +85,6 @@ class TodoService extends EventTarget {
     }
 
     this.save();
-    this.dispatchUpdate();
   }
   
   dispatchUpdate() {

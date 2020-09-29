@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Todo from '../../models/todo.models';
 import { todoService } from '../../services/todo.service';
 import './dayPage.component.css';
+import { TodoPage, Form } from '../../components';
 
 export default class DayPageComponent extends Component {
   state = {
@@ -59,12 +60,6 @@ export default class DayPageComponent extends Component {
     });
   }
 
-  handleDeleteButtonClick = (event) => {
-    const id = event.currentTarget.dataset.id;
-    const currentTodo = find(this.props.todos, { id });
-    todoService.removeById(pick(this.props, ['year', 'month', 'day']), currentTodo);
-  } 
-
   render() {
 
     const { year, month, day } = this.props;
@@ -74,7 +69,6 @@ export default class DayPageComponent extends Component {
     return (
       <div className='day-page'>
         <div className='day-page-header'>
-
         <Link to={`/year/${Number(year)}/month/${Number(month)}/day/${Number(day) - 1}`}>
           <button type='button'>&lt;</button>
         </Link>
@@ -82,39 +76,30 @@ export default class DayPageComponent extends Component {
         <Link to={`/year/${Number(year)}/month/${Number(month)}/day/${Number(day) + 1}`}>
           <button type='button'>&gt;</button>
         </Link>
-
         </div>
 
         <div className='day-page-content'>
-
           {this.props.todos.map((todo, index) => {
             return ( 
-              // <TodoPage key={todo.id} todo={todo}/>
-              <div className='todo-item' key={todo.id}>
-                <div onClick={this.handleTodoClick} data-id={todo.id}>
-                  <div className='todo-item-title'>{index + 1}. {todo.title}</div>
-                  <div className='todo-item-descr'>{todo.description}</div>
-                </div>
-                <button onClick={this.handleDeleteButtonClick} data-id={todo.id}>Удалить</button>
-              </div>
+              <TodoPage 
+                key={todo.id} 
+                todo={todo}
+                index={index}
+                handleTodoClick={this.handleTodoClick}
+                todos={this.props.todos}
+                year={this.props.year}
+                month={this.props.month}
+                day={this.props.day}
+              />
             );}
           )}
           { this.state.isFormVisible ?
-            <form onSubmit={this.handleSubmit}>
-            <input 
-              type='text'
-              name='title'
-              value={this.state.currentTodo.title}
-              onChange={this.handleTitleChange}
-            />
-            <input 
-              type='text'
-              name='description'
-              value={this.state.currentTodo.description}
-              onChange={this.handleDescriptionChange}
-            />
-            <input type='submit' value='Submit'/>
-            </form> : <button onClick={this.handleAddButtonClick}>Добавить</button> }
+            <Form 
+              currentTodo={this.state.currentTodo}
+              handleSubmit={this.handleSubmit}
+              handleTitleChange={this.handleTitleChange}
+              handleDescriptionChange={this.handleDescriptionChange}
+            /> : <button onClick={this.handleAddButtonClick}>Добавить</button> }
         </div>
       </div>
     );
